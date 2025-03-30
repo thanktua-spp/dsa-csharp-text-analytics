@@ -1,0 +1,14 @@
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/bin/Debug/net9.0/ThankGodEgbeDSA_Assignment
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/bin/Debug/net9.0/ThankGodEgbeDSA_Assignment.deps.json
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/bin/Debug/net9.0/ThankGodEgbeDSA_Assignment.runtimeconfig.json
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/bin/Debug/net9.0/ThankGodEgbeDSA_Assignment.dll
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/bin/Debug/net9.0/ThankGodEgbeDSA_Assignment.pdb
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/obj/Debug/net9.0/ThankGodEgbeDSA_Assignment.GeneratedMSBuildEditorConfig.editorconfig
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/obj/Debug/net9.0/ThankGodEgbeDSA_Assignment.AssemblyInfoInputs.cache
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/obj/Debug/net9.0/ThankGodEgbeDSA_Assignment.AssemblyInfo.cs
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/obj/Debug/net9.0/ThankGodEgbeDSA_Assignment.csproj.CoreCompileInputs.cache
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/obj/Debug/net9.0/ThankGodEgbeDSA_Assignment.dll
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/obj/Debug/net9.0/refint/ThankGodEgbeDSA_Assignment.dll
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/obj/Debug/net9.0/ThankGodEgbeDSA_Assignment.pdb
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/obj/Debug/net9.0/ThankGodEgbeDSA_Assignment.genruntimeconfig.cache
+/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/obj/Debug/net9.0/ref/ThankGodEgbeDSA_Assignment.dll
