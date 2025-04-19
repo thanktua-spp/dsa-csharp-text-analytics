@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/ThankGodEgbeDSA_Assignment.csproj": {}
+    "/home/thankgod/2025/mmu/dsa/ThankGodEgbeDSA_Assignment/ThankGodEgbeDSA_Assignment.csproj": {}
   },
   "projects": {
-    "/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/ThankGodEgbeDSA_Assignment.csproj": {
+    "/home/thankgod/2025/mmu/dsa/ThankGodEgbeDSA_Assignment/ThankGodEgbeDSA_Assignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/ThankGodEgbeDSA_Assignment.csproj",
+        "projectUniqueName": "/home/thankgod/2025/mmu/dsa/ThankGodEgbeDSA_Assignment/ThankGodEgbeDSA_Assignment.csproj",
         "projectName": "ThankGodEgbeDSA_Assignment",
-        "projectPath": "/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/ThankGodEgbeDSA_Assignment.csproj",
+        "projectPath": "/home/thankgod/2025/mmu/dsa/ThankGodEgbeDSA_Assignment/ThankGodEgbeDSA_Assignment.csproj",
         "packagesPath": "/home/thankgod/.nuget/packages/",
-        "outputPath": "/home/thankgod/2025/mmu/ThankGodEgbeDSA_Assignment/obj/",
+        "outputPath": "/home/thankgod/2025/mmu/dsa/ThankGodEgbeDSA_Assignment/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/thankgod/.nuget/NuGet/NuGet.Config"
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.104/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

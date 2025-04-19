@@ -1,0 +1,24 @@
+      +-------------+
+      | Program.cs  |  --> Entry point, passes file path
+      +------+------+
+             |
+             v
++------------+------------+
+|   DocumentProcessor     | <------ Delegates logic flow
++------------+------------+
+             |
+     ---------------------
+    |                     |
+    v                     v
++--------+        +------------------+
+| Reader |        |    Analyser      |
+|Service |        |   (Logic Unit)   |
++--------+        +------------------+
+    |                     |
+    |                     |
+    v                     v
++--------------------------------------------+
+|                Document Model              |
+|   - string[] Lines                         |
+|   - Dictionary<string, int> WordFrequency  |
++--------------------------------------------+
