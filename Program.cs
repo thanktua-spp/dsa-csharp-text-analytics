@@ -15,6 +15,7 @@ class Program
 
         DictDocumentProcessor docProcessor = new(filePathString); // solution 1.
         docProcessor.DisplayText(); 
+        Console.WriteLine();
         //docProcessor.DisplayWordsAndLineCounts(); // solution 2. and 3.0
         //docProcessor.DisplayWordFrequency("any"); // solution 4.
         //docProcessor.DisplayWordFrequency("ascending"); // solution 5.1

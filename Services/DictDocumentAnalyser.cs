@@ -47,26 +47,4 @@ class DictDocumentAnalyser
         }
         return maxFreqWordCount;
     }
-
-    public Dictionary<string, int> WordCountMapping(string[] extractedText)
-    {
-        Dictionary<string, int> wordFreq = [];
-        char[] delimiters = [' ', ',', '"', ':', ';', '?', '!', '-', '.', '\'', '*'];
-        foreach (string line in extractedText)
-        {
-            foreach (string word in line.Split(delimiters, System.StringSplitOptions.RemoveEmptyEntries)
-                                        .Select(w => w.ToLower()))
-            {
-                if (wordFreq.TryGetValue(word, out int value))
-                {
-                    wordFreq[word] = ++value;
-                }
-                else
-                {
-                    wordFreq[word] = 1;
-                }
-            }
-        }
-        return wordFreq;
-    }
 }

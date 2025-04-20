@@ -1,29 +1,37 @@
+
 class DictDocumentReader()
 {
-    public static bool IsFileExist(string filePathName)
+    public DictDocument ReadFromDocument(string filePathName)
     {
-        if (File.Exists(filePathName))
-        {
-            Console.WriteLine();
-            Console.WriteLine("**********************************");
-            Console.WriteLine($"Reading from file {Path.GetFileName(filePathName)}");
-            Console.WriteLine("**********************************");
-            Console.WriteLine();
-            return true;
+        if (!FileHelper.IsFileExist(filePathName))
+        {   
+            return new DictDocument;
         }
-        else
-        {
-            Console.WriteLine($" File {filePathName} Not Found");
-            return false;
-        }
+        
+        
     }
 
-    public string[] ReadFromDocument(string filePathName)
+
+
+    public Dictionary<string, int> WordCountMapping(string[] extractedText)
     {
-        if (IsFileExist(filePathName))
-        {   
-            return File.ReadAllLines(filePathName);
+        Dictionary<string, int> wordFreqDict = [];
+        char[] delimiters = [' ', ',', '"', ':', ';', '?', '!', '-', '.', '\'', '*'];
+        foreach (string line in extractedText)
+        {
+            foreach (string word in line.Split(delimiters, System.StringSplitOptions.RemoveEmptyEntries)
+                                        .Select(w => w.ToLower()))
+            {
+                if (wordFreqDict.TryGetValue(word, out int value))
+                {
+                    wordFreqDict[word] = ++value;
+                }
+                else
+                {
+                    wordFreqDict[word] = 1;
+                }
+            }
         }
-        return [];
+        return wordFreqDict;
     }
 }
