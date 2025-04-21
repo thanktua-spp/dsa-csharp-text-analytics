@@ -1,37 +1,44 @@
 
 class DictDocumentReader()
 {
-    public DictDocument ReadFromDocument(string filePathName)
+    public DictDocument ReadFromDocument(string filePath)
     {
-        if (!FileHelper.IsFileExist(filePathName))
+        if (!Helpers.IsFileExist(filePath))
         {   
-            return new DictDocument;
+            return new DictDocument(); // empty document
         }
         
+        string[] lines = File.ReadAllLines(filePath);
+        var wordFreq = WordCount(lines);
+
+        return new DictDocument
+        {
+            Lines = lines,
+            WordFreq = wordFreq
+        };
         
     }
 
 
-
-    public Dictionary<string, int> WordCountMapping(string[] extractedText)
+    public Dictionary<string, int> WordCount(string[] lines)
     {
-        Dictionary<string, int> wordFreqDict = [];
+        Dictionary<string, int> wordFreq = [];
         char[] delimiters = [' ', ',', '"', ':', ';', '?', '!', '-', '.', '\'', '*'];
-        foreach (string line in extractedText)
+        foreach (string line in lines)
         {
             foreach (string word in line.Split(delimiters, System.StringSplitOptions.RemoveEmptyEntries)
                                         .Select(w => w.ToLower()))
             {
-                if (wordFreqDict.TryGetValue(word, out int value))
+                if (wordFreq.TryGetValue(word, out int value))
                 {
-                    wordFreqDict[word] = ++value;
+                    wordFreq[word] = ++value;
                 }
                 else
                 {
-                    wordFreqDict[word] = 1;
+                    wordFreq[word] = 1;
                 }
             }
         }
-        return wordFreqDict;
+        return wordFreq;
     }
 }

@@ -1,12 +1,6 @@
 
-public class DictDocument
-{
-    public string[] TextLines { get; set; }
-    public Dictionary<string, int> WordFreqMapping { get; set; }
-
-    public DictDocument(string[] textLines, Dictionary<string, int> wordFreqMapping)
-    {
-        TextLines = textLines;
-        WordFreqMapping = wordFreqMapping;
-    }
+public class DictDocument: IDocument
+{   
+    public string[] Lines { get; set; } = []; 
+    public Dictionary<string, int> WordFreq { get; set; } = [];
 }

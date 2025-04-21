@@ -1,44 +1,22 @@
-class DictDocumentAnalyser
+public class DictDocumentAnalyser : IDocumentAnalyser<DictDocument>
 {    
-    static Boolean IsWord(string str)
+    public int CountLines(DictDocument document) => document.Lines.Length;
+    public int CountWords(DictDocument document) => document.WordFreq.Values.Sum();
+
+    public Dictionary<string, int> GetWordFrequency(DictDocument doc) => doc.WordFreq;
+    public int ComputeWordFrequency(string word, DictDocument document)
     {
-        return true; //MyRegex().IsMatch(str);
+        return document.WordFreq.TryGetValue(word.ToLower(), out int count) ? count : 0; // assumes words are not case sensitive
     }
 
-    public int CountLines(string[] extractedText) => extractedText.Length;
-    public int CountWords(Dictionary<string, int> wordFreqDict) => wordFreqDict.Count;
-
-    public int ComputeWordFrequency(string word, Dictionary<string, int> wordFreqDict)
+    public KeyValuePair<string, int> MaxWordCount(DictDocument document)
     {
-        return wordFreqDict.TryGetValue(word.ToLower(), out int count) ? count : 0; // assumes words are not case sensitive
+        return document.WordFreq.MaxBy(kvp => kvp.Value); //using Linq
     }
-
-    private bool IsWordInLineNumber(string word, string line)
+    public KeyValuePair<string, int> MaxWordLength(DictDocument document)
     {
-        return line.Split().Contains(word);
-    }
-
-    public List<int> LinesWithWord(string word, string[] extractedText)
-    {
-        List<int> lineNumbers = [];
-        foreach (var (line, index) in extractedText.Select((line, index) => (line, index)))
-        {
-            if (IsWordInLineNumber(word, line))
-            {
-                lineNumbers.Add(index + 1);
-            }
-        }
-        return lineNumbers;
-    }
-
-    public KeyValuePair<string, int> MaxWordCount(Dictionary<string, int> wordFreqDict)
-    {
-        return wordFreqDict.MaxBy(kvp => kvp.Value); //using Linq
-    }
-    public KeyValuePair<string, int> MaxWordLength(Dictionary<string, int> wordFreqDict)
-    {
-        var maxFreqWordCount = wordFreqDict.First();
-        foreach (var entry in wordFreqDict)
+        var maxFreqWordCount = document.WordFreq.First();
+        foreach (var entry in document.WordFreq)
         {
             if (entry.Key.Length > maxFreqWordCount.Key.Length)
             {

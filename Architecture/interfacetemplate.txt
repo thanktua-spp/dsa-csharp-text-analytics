@@ -1,0 +1,24 @@
+          +--------------------+
+          |     IDocument      | <--- Common contract: Lines + WordFreq
+          +--------------------+
+                    ▲
+        +-----------+-----------+
+        |                       |
++---------------+     +-----------------+
+| DictDocument  |     | TrieDocument    |
++---------------+     +-----------------+
+
+          +------------------------+
+          |   IDocumentAnalyser    | <--- Common analyser contract
+          +------------------------+
+                    ▲
+        +-----------+-----------+
+        |                       |
++-------------------+  +--------------------+
+| DictDocumentAnalyser | TrieDocumentAnalyser |
++-------------------+  +--------------------+
+
+Each processor:
+DictDocumentProcessor
+TrieDocumentProcessor
+... works just as-is but uses IDocument + IDocumentAnalyser

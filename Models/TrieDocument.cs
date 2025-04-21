@@ -1,12 +1,18 @@
-public class TrieDocument
+public class TrieDocument : IDocument
 {
-    public string[] TextLines { get; set; } = [];
+    public string[] Lines { get; set; } = [];
+    public TrieNode Root { get; set; } = new();
+}
+public class TrieNode
+{
+    public Dictionary<char, TrieNode> Children { get; set; } = [];
+    public bool IsEndOfWord { get; set; } = false;
+    public int Frequency { get; set; } = 0;
 
-    public TrieNode Root { get; set; } = new TrieNode();
-
+    // Insert word into the Trie
     public void InsertWord(string word)
     {
-        TrieNode current = Root;
+        TrieNode current = this;
         foreach (char c in word)
         {
             if (!current.Children.ContainsKey(c))
@@ -19,9 +25,10 @@ public class TrieDocument
         current.Frequency++;
     }
 
+    // Get frequency of a specific word
     public int GetFrequency(string word)
     {
-        TrieNode current = Root;
+        TrieNode current = this;
         foreach (char c in word)
         {
             if (!current.Children.ContainsKey(c))
@@ -33,10 +40,25 @@ public class TrieDocument
         return current.IsEndOfWord ? current.Frequency : 0;
     }
 
-}
-public class TrieNode
-{
-    public Dictionary<char, TrieNode> Children { get; set; } = [];
-    public bool IsEndOfWord { get; set; } = false;
-    public int Frequency { get; set; }
+    // Recursively collect all words and their frequencies
+    public Dictionary<string, int> GetAllWordsFrequency()
+    {
+        Dictionary<string, int> results = new();
+        CollectWords(this, "", results);
+        return results;
+    }
+
+    private void CollectWords(TrieNode node, string currentWord, Dictionary<string, int> results)
+    {
+        if(node.IsEndOfWord)
+        {
+            results[currentWord] = node.Frequency;
+        }
+
+        // use preorder node traversal
+        foreach (var child in node.Children)
+        {
+            CollectWords(child.Value, currentWord + child.Key, results);
+        }
+    }
 }
